@@ -2,6 +2,14 @@
 
 A web interface for controlling LED matrices on RP2040-based microcontrollers. This server provides a visual grid interface where users can click cells to cycle through different colors (off, red, green, blue), with the state being tracked and made available via a REST API.
 
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/2b399f91-8a54-4b2f-b6d2-46bb2fcef171" alt="2025-01-06_10-28"></td>
+    <td><img src="https://github.com/user-attachments/assets/412db337-5d65-4138-9be1-25c4395c99a3" alt="image"></td>
+  </tr>
+</table>
+
+
 ## Features
 
 - 5x3 LED matrix visual interface
