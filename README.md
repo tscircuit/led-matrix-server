@@ -2,6 +2,8 @@
 
 A web interface for controlling LED matrices on RP2040-based microcontrollers. This server provides a visual grid interface where users can click cells to cycle through different colors (off, red, green, blue), with the state being tracked and made available via a REST API.
 
+Source code for LED Matrix board here: https://tscircuit.com/seveibar/pico-w-3x5-led-matrix
+
 <table>
   <tr>
     <td><img src="https://github.com/user-attachments/assets/2b399f91-8a54-4b2f-b6d2-46bb2fcef171" alt="2025-01-06_10-28"></td>
