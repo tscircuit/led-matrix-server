@@ -10,7 +10,7 @@ let matrix = Array(5)
   .map(() => Array(3).fill(0))
 
 // Custom API plugin
-function matrixApiPlugin(): Plugin {
+export function matrixApiPlugin(): Plugin {
   return {
     name: "matrix-api",
     configureServer(server) {
@@ -22,7 +22,23 @@ function matrixApiPlugin(): Plugin {
           })
           req.on("end", () => {
             try {
-              matrix = JSON.parse(body)
+              const nextMatrix = JSON.parse(body)
+              if (
+                !Array.isArray(nextMatrix) ||
+                nextMatrix.length !== 5 ||
+                !nextMatrix.every(
+                  (row) =>
+                    Array.isArray(row) &&
+                    row.length === 3 &&
+                    row.every(
+                      (color) =>
+                        Number.isInteger(color) && color >= 0 && color <= 3,
+                    ),
+                )
+              ) {
+                throw new Error("Invalid matrix data")
+              }
+              matrix = nextMatrix
               res.end(JSON.stringify({ success: true }))
             } catch (e) {
               res.statusCode = 400
